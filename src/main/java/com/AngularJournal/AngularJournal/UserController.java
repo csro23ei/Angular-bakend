@@ -15,15 +15,14 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<User> registerUser(@RequestBody User user) {
-        ResponseEntity<User> newUser = userService.registerUser(user);
-        return newUser;
+        return userService.registerUser(user);
     }
 
     @PostMapping("/login")
     public ResponseEntity<User> loginUser(@RequestBody User user) {
         User loggedInUser = userService.loginUser(user.getUsername(), user.getPassword());
         if (loggedInUser != null) {
-            return ResponseEntity.ok(loggedInUser);
+            return ResponseEntity.ok(loggedInUser); // Returnera användaren om inloggningen lyckas
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         }
@@ -31,6 +30,6 @@ public class UserController {
 
     @PostMapping("/logout")
     public void logoutUser(@RequestBody User user) {
-        userService.logoutUser(user.getUsername());
+        // Ingen åtgärd krävs för utloggning om du inte använder sessioner
     }
 }

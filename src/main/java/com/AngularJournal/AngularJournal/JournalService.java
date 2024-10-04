@@ -24,4 +24,10 @@ public class JournalService {
         Query query = Query.query(Criteria.where("userId").is(userId));
         return mongoTemplate.find(query, Journal.class);
     }
+
+    public ResponseEntity<String> deleteJournal(String journalId) {
+        mongoTemplate.remove(Query.query(Criteria.where("_id").is(journalId)), Journal.class);
+        return ResponseEntity.ok("Journal borttagen.");
+    }
+
 }

@@ -10,7 +10,7 @@ public class Journal {
     private String entry;
     private String date;
     private String emotion;
-    private String userId;
+    private String userId; // Nyckel för att särskilja journaler baserat på användare
 
     // Getters och setters
     public String getId() {

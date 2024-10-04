@@ -26,4 +26,10 @@ public class JournalController {
         List<Journal> journals = journalService.getJournalsByUserId(userId);
         return ResponseEntity.ok(journals);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteJournal(@PathVariable String id, @RequestHeader("userId") String userId) {
+        return journalService.deleteJournal(id);
+    }
+
 }
