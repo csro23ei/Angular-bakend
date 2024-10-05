@@ -16,6 +16,7 @@ public class JournalService {
     private MongoTemplate mongoTemplate;
 
     public ResponseEntity<Journal> saveJournal(Journal journal) {
+
         mongoTemplate.save(journal);
         return ResponseEntity.ok(journal);
     }

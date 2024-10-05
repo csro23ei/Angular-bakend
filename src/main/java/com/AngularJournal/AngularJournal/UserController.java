@@ -22,7 +22,7 @@ public class UserController {
     public ResponseEntity<User> loginUser(@RequestBody User user) {
         User loggedInUser = userService.loginUser(user.getUsername(), user.getPassword());
         if (loggedInUser != null) {
-            return ResponseEntity.ok(loggedInUser); // Returnera användaren om inloggningen lyckas
+            return ResponseEntity.ok(loggedInUser);
         } else {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(null);
         }
@@ -30,6 +30,6 @@ public class UserController {
 
     @PostMapping("/logout")
     public void logoutUser(@RequestBody User user) {
-        // Ingen åtgärd krävs för utloggning om du inte använder sessioner
+
     }
 }

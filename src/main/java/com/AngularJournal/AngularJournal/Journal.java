@@ -10,9 +10,9 @@ public class Journal {
     private String entry;
     private String date;
     private String emotion;
-    private String userId; // Nyckel för att särskilja journaler baserat på användare
+    private String userId;
+    private String time;
 
-    // Getters och setters
     public String getId() {
         return id;
     }
@@ -51,5 +51,13 @@ public class Journal {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

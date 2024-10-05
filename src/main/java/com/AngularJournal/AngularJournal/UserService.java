@@ -26,12 +26,12 @@ public class UserService {
     }
 
     public User loginUser(String username, String password) {
-        // Här kan du valfritt validera lösenordet
+
         Query query = Query.query(Criteria.where("username").is(username).and("password").is(password));
-        return mongoTemplate.findOne(query, User.class); // Returnera användaren om inloggningen lyckas
+        return mongoTemplate.findOne(query, User.class);
     }
 
     public void logoutUser(String username) {
-        // Ingen åtgärd krävs för utloggning om du inte använder sessioner
+
     }
 }

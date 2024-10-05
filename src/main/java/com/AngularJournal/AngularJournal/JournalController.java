@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/journal")
-@CrossOrigin("*") // Tillåt alla ursprung för CORS
+@CrossOrigin("*")
 public class JournalController {
 
     @Autowired
